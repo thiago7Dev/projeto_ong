@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VôLuntar | Cadastro de Voluntário</title>
+    <meta name="description" content="Cadastre-se como voluntário da VôLuntar e ajude a transformar vidas.">
+    <meta name="keywords" content="ONG, voluntariado, cadastro, voluntário, VôLuntar, ajuda social">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>VôLuntar</h1>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="cadastro.html">Faça parte</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Cadastro de Voluntário</h2>
+            <p>Preencha o formulário abaixo e faça parte da nossa equipe de voluntários.</p>
+        </section>
+        <section>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Dados Pessoais</legend>
+                    <label for="nome">Nome completo:</label>
+                    <input type="text" id="nome" name="nome" required>
+                    
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" required>
+                    
+                    <label for="nascimento">Data de nascimento:</label>
+                    <input type="date" id="nascimento" name="nascimento" required>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Área de Interesse</legend>
+                    <label>
+                        <input type="checkbox" name="area" value="educacao">
+                        Educar para o Futuro
+                    </label>
+                    <label>
+                        <input type="checkbox" name="area" value="saude">
+                        Saúde e Bem‑Estar
+                    </label>
+                    <label>
+                        <input type="checkbox" name="area" value="inclusao">
+                        Inclusão e Trabalho
+                    </label>
+                    <label>
+                        <input type="checkbox" name="area" value="sustentabilidade">
+                        Comunidade Sustentável
+                    </label>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Disponibilidade</legend>
+                    <label for="disponibilidade">Quando você pode ajudar?</label>
+                    <select id="disponibilidade" name="disponibilidade" required>
+                        <option value="">Selecione...</option>
+                        <option value="manha">Manhã</option>
+                        <option value="tarde">Tarde</option>
+                        <option value="noite">Noite</option>
+                        <option value="fins-de-semana">Fins de semana</option>
+                        <option value="flexivel">Horário flexível</option>
+                    </select>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Mensagem</legend>
+                    <label for="mensagem">Conte-nos um pouco sobre você e por que quer ser voluntário:</label>
+                    <textarea id="mensagem" name="mensagem" rows="5"></textarea>
+                </fieldset>
+                
+                <button type="submit">Enviar Cadastro</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 VôLuntar. Todos os direitos reservados.</p>
+        <address>
+            VôLuntar ONG<br>
+            Rua da Solidariedade, 123, Bairro Esperança, Cidade, Estado, CEP 00000-000<br>
+            Telefone: (00) 1234-5678<br>
+            <a href="mailto:contato@voluntar.org">contato@voluntar.org</a>
+        </address>
+        <nav>
+            <ul>
+                <li><a href="#" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                <li><a href="#" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                <li><a href="#" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                <li><a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="#" target="_blank" rel="noopener noreferrer">Política de Privacidade</a></li>
+                <li><a href="#" target="_blank" rel="noopener noreferrer">Termos de Uso</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>
