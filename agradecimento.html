@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obrigado! | VôLuntar</title>
+    <meta name="description" content="Agradecimento pelo cadastro na VôLuntar">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        .agradecimento-hero {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-4);
+        }
+        
+        .agradecimento-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.4);
+            z-index: 1;
+        }
+        
+        .agradecimento-container {
+            position: relative;
+            z-index: 100;
+            width: 90%;
+            max-width: 700px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.90));
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 32px rgba(4, 41, 64, 0.2);
+            padding: var(--space-6);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-align: center;
+        }
+        
+        .agradecimento-container h1 {
+            color: var(--primary-strong);
+            margin-bottom: var(--space-4);
+            font-size: 2.5rem;
+        }
+        
+        .agradecimento-container .nome-voluntario {
+            color: var(--color-lime);
+            font-weight: 700;
+            font-size: 1.8rem;
+            margin: var(--space-3) 0;
+        }
+        
+        .agradecimento-container p {
+            color: var(--text-primary);
+            line-height: 1.8;
+            margin-bottom: var(--space-3);
+            font-size: 1.1rem;
+        }
+        
+        .agradecimento-assinatura {
+            margin-top: var(--space-5);
+            padding-top: var(--space-4);
+            border-top: 2px solid var(--color-lime);
+        }
+        
+        .agradecimento-assinatura p {
+            font-family: var(--font-accent);
+            font-style: italic;
+            color: var(--primary-strong);
+            font-size: 1.2rem;
+        }
+        
+        .btn-voltar {
+            margin-top: var(--space-4);
+        }
+        
+        @media (max-width: 768px) {
+            .agradecimento-hero {
+                background-attachment: scroll;
+            }
+            
+            .agradecimento-container {
+                width: 95%;
+                padding: var(--space-4);
+            }
+            
+            .agradecimento-container h1 {
+                font-size: 2rem;
+            }
+            
+            .agradecimento-container .nome-voluntario {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Hero com fundo parallax -->
+    <div class="agradecimento-hero" style="background-image: url('assets/images/voluntar-apresentacao.jpg');">
+        <div class="agradecimento-container">
+            <h1>Obrigado por se juntar a nós!</h1>
+            
+            <p class="nome-voluntario" id="nome-voluntario"><!-- Nome será inserido aqui --></p>
+            
+            <p>Sua decisão de se tornar um voluntário da <strong>VôLuntar</strong> é um passo importante para transformar vidas e fortalecer nossa comunidade.</p>
+            
+            <p>Recebemos seu cadastro com sucesso! Em breve, nossa equipe entrará em contato para apresentar os projetos disponíveis e alinhar a melhor forma de você contribuir com suas habilidades e disponibilidade.</p>
+            
+            <p>Juntos, podemos construir um futuro melhor para todos. Sua solidariedade e compromisso fazem toda a diferença!</p>
+            
+            <div class="agradecimento-assinatura">
+                <p>Com gratidão,<br><strong>Equipe VôLuntar</strong></p>
+            </div>
+            
+            <a href="index.html" class="btn btn-primary btn-lg btn-voltar">Voltar para o site</a>
+        </div>
+    </div>
+    
+    <script>
+        // Recupera o nome do voluntário da URL ou localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            let nomeVoluntario = urlParams.get('nome');
+            
+            // Se não houver na URL, tenta pegar do localStorage
+            if (!nomeVoluntario) {
+                nomeVoluntario = localStorage.getItem('voluntario_nome');
+            }
+            
+            // Exibe o nome do voluntário
+            const nomeElement = document.getElementById('nome-voluntario');
+            if (nomeVoluntario) {
+                nomeElement.textContent = nomeVoluntario;
+                // Limpa o localStorage após usar
+                localStorage.removeItem('voluntario_nome');
+            } else {
+                nomeElement.textContent = 'Voluntário(a)';
+            }
+        });
+    </script>
+</body>
+</html>
