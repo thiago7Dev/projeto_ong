@@ -1,0 +1,391 @@
+/* ========================================
+   NAVEGAÇÃO POR TECLADO E FOCO VISÍVEL
+   Estilos para melhorar acessibilidade
+   ======================================== */
+
+/* Skip Link - Pular para conteúdo */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: #000000;
+  color: #FFFFFF;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-weight: 700;
+  z-index: 10000;
+  border-radius: 0 0 8px 0;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid #FFD93D;
+  outline-offset: 2px;
+}
+
+/* Foco visível para usuários de teclado */
+.user-is-tabbing *:focus {
+  outline: 3px solid #4A90E2;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+.user-is-tabbing a:focus {
+  outline-color: #4A90E2;
+  background-color: rgba(74, 144, 226, 0.1);
+}
+
+.user-is-tabbing button:focus {
+  outline-color: #4A90E2;
+  transform: scale(1.02);
+}
+
+.user-is-tabbing .btn:focus {
+  outline-width: 4px;
+  box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.3);
+}
+
+.user-is-tabbing .form-input:focus,
+.user-is-tabbing .form-select:focus,
+.user-is-tabbing .form-textarea:focus {
+  outline-color: #4A90E2;
+  outline-width: 3px;
+  border-color: #4A90E2;
+}
+
+.user-is-tabbing .card:focus {
+  outline-color: #4A90E2;
+  outline-width: 3px;
+  transform: translateY(-4px);
+}
+
+.user-is-tabbing .nav-link:focus,
+.user-is-tabbing .nav-link-hero:focus {
+  outline-color: #FFD93D;
+  background-color: rgba(255, 217, 61, 0.2);
+}
+
+/* Remove outline para usuários de mouse */
+body:not(.user-is-tabbing) *:focus {
+  outline: none;
+}
+
+/* ARIA Live Region - Oculto visualmente mas acessível */
+#aria-live-region {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Estilo para elementos com role="status" */
+[role="status"],
+[role="alert"] {
+  padding: var(--space-3);
+  border-radius: 8px;
+  margin: var(--space-2) 0;
+}
+
+[role="alert"] {
+  background-color: #FFE6E6;
+  border: 2px solid #FF6B6B;
+  color: #CC0000;
+}
+
+[role="status"] {
+  background-color: #E6F7FF;
+  border: 2px solid #74C0FC;
+  color: #0066CC;
+}
+
+/* Indicador visual de carregamento acessível */
+.loading-indicator {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: #4A90E2;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-indicator[aria-busy="true"] {
+  margin-left: var(--space-2);
+}
+
+/* Tooltips acessíveis */
+[data-tooltip] {
+  position: relative;
+  cursor: help;
+}
+
+[data-tooltip]:hover::after,
+[data-tooltip]:focus::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 12px;
+  background-color: #000000;
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  border-radius: 6px;
+  z-index: 1000;
+  margin-bottom: 8px;
+}
+
+[data-tooltip]:hover::before,
+[data-tooltip]:focus::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #000000;
+  z-index: 1000;
+  margin-bottom: 2px;
+}
+
+/* Mensagens de erro acessíveis */
+.form-error {
+  color: #CC0000;
+  font-size: 0.875rem;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-error::before {
+  content: '⚠';
+  font-size: 1rem;
+}
+
+/* Mensagens de sucesso */
+.form-success {
+  color: #006400;
+  font-size: 0.875rem;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-success::before {
+  content: '✓';
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* Campos obrigatórios com indicador visual */
+.required::after {
+  content: '*';
+  color: #CC0000;
+  margin-left: 4px;
+  font-weight: 700;
+}
+
+/* Breadcrumbs acessíveis */
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: var(--space-3) 0;
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb li:not(:last-child)::after {
+  content: '/';
+  margin: 0 var(--space-2);
+  color: var(--text-secondary);
+}
+
+.breadcrumb a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover,
+.breadcrumb a:focus {
+  text-decoration: underline;
+}
+
+.breadcrumb [aria-current="page"] {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Tabindex -1 para elementos que recebem foco programaticamente */
+[tabindex="-1"]:focus {
+  outline: none;
+}
+
+/* Progress bar acessível */
+.progress-bar {
+  width: 100%;
+  height: 24px;
+  background-color: #E8E8E8;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #4A90E2;
+  transition: width 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+/* Spinner de carregamento com label */
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.spinner-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Destaque para elementos com erro de validação */
+[aria-invalid="true"] {
+  border-color: #CC0000;
+  background-color: #FFE6E6;
+}
+
+[aria-invalid="false"] {
+  border-color: #006400;
+  background-color: #E6FFE6;
+}
+
+/* Dialog/Modal acessível */
+.modal[role="dialog"] {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+}
+
+.modal[aria-hidden="true"] {
+  display: none;
+}
+
+/* Contraste mínimo garantido */
+.text-contrast {
+  color: #000000;
+  background-color: #FFFFFF;
+  padding: 2px 6px;
+}
+
+/* Animações reduzidas para usuários que preferem */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ========================================
+   BOTÕES DE ACESSIBILIDADE
+   ======================================== */
+
+.accessibility-toggles {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  gap: 12px;
+}
+
+.theme-toggle,
+.contrast-toggle {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transition: all 0.2s ease;
+  padding: 0;
+  filter: grayscale(100%) opacity(0.6);
+}
+
+.theme-toggle:hover,
+.contrast-toggle:hover {
+  filter: grayscale(100%) opacity(1);
+  transform: scale(1.15);
+}
+
+.theme-toggle:focus,
+.contrast-toggle:focus {
+  outline: 2px solid rgba(0, 0, 0, 0.3);
+  outline-offset: 4px;
+  filter: grayscale(100%) opacity(1);
+}
+
+.theme-toggle:active,
+.contrast-toggle:active {
+  transform: scale(0.9);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .accessibility-toggles {
+    top: 15px;
+    right: 15px;
+    gap: 10px;
+  }
+  
+  .theme-toggle,
+  .contrast-toggle {
+    width: 28px;
+    height: 28px;
+    font-size: 22px;
+  }
+}

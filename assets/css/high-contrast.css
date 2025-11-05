@@ -1,0 +1,322 @@
+/* ========================================
+   MODO DE ALTO CONTRASTE - WCAG 2.1 AA
+   Contraste mínimo: 7:1 (AAA para texto normal)
+   ======================================== */
+
+/* Aplicado quando body tem classe .high-contrast */
+.high-contrast {
+  /* Cores base com contraste máximo */
+  --text-primary: #000000;
+  --text-secondary: #000000;
+  --surface: #FFFFFF;
+  --background: #FFFFFF;
+  
+  /* Cores de destaque com contraste >= 7:1 */
+  --primary-strong: #000080; /* Azul escuro */
+  --primary: #0000CD; /* Azul médio */
+  --color-lime: #006400; /* Verde escuro */
+  --color-neon-lime: #008000; /* Verde médio */
+  --color-sun: #CC6600; /* Laranja escuro */
+  
+  /* Estados */
+  --error: #CC0000;
+  --success: #006400;
+  --warning: #CC6600;
+  --info: #000080;
+}
+
+/* Fundo branco puro para leitura */
+.high-contrast body {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+/* Links com sublinhado sempre visível */
+.high-contrast a {
+  color: #0000CD;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.high-contrast a:hover,
+.high-contrast a:focus {
+  color: #000080;
+  background-color: #FFFF00;
+  outline: 3px solid #000000;
+  text-decoration: underline;
+}
+
+/* Botões com bordas fortes */
+.high-contrast .btn {
+  border: 3px solid #000000;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.high-contrast .btn-primary {
+  background-color: #000080;
+  color: #FFFFFF;
+}
+
+.high-contrast .btn-primary:hover,
+.high-contrast .btn-primary:focus {
+  background-color: #000000;
+  color: #FFFF00;
+  outline: 3px solid #FFFF00;
+}
+
+.high-contrast .btn-secondary {
+  background-color: #006400;
+  color: #FFFFFF;
+}
+
+.high-contrast .btn-outline {
+  background-color: #FFFFFF;
+  color: #000000;
+  border-color: #000000;
+}
+
+/* Cards com bordas definidas */
+.high-contrast .card {
+  border: 3px solid #000000;
+  background-color: #FFFFFF;
+  box-shadow: none;
+}
+
+/* Formulários */
+.high-contrast .form-input,
+.high-contrast .form-select,
+.high-contrast .form-textarea {
+  border: 2px solid #000000;
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+.high-contrast .form-input:focus,
+.high-contrast .form-select:focus,
+.high-contrast .form-textarea:focus {
+  outline: 3px solid #000080;
+  border-color: #000080;
+  background-color: #FFFFCC;
+}
+
+.high-contrast .form-input.is-invalid {
+  border-color: #CC0000;
+  background-color: #FFE6E6;
+}
+
+.high-contrast .form-input.is-valid {
+  border-color: #006400;
+  background-color: #E6FFE6;
+}
+
+/* Navegação */
+.high-contrast .navbar {
+  background-color: #000000;
+  border-bottom: 3px solid #FFFF00;
+}
+
+.high-contrast .nav-link,
+.high-contrast .nav-link-hero {
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.high-contrast .nav-link:hover,
+.high-contrast .nav-link:focus,
+.high-contrast .nav-link-hero:hover,
+.high-contrast .nav-link-hero:focus {
+  background-color: #FFFF00;
+  color: #000000;
+  outline: 2px solid #FFFFFF;
+}
+
+.high-contrast .navbar-brand,
+.high-contrast .navbar-brand-hero {
+  color: #FFFF00;
+  font-weight: 900;
+}
+
+/* Header flutuante em alto contraste */
+.high-contrast .header-container {
+  background: #000000;
+  border: 3px solid #FFFF00;
+  backdrop-filter: none;
+}
+
+/* Parallax hero - fundo branco */
+.high-contrast .parallax-hero {
+  background-image: none !important;
+  background-color: #FFFFFF;
+}
+
+.high-contrast .parallax-hero::before {
+  display: none;
+}
+
+/* Badges e Tags */
+.high-contrast .badge,
+.high-contrast .tag {
+  border: 2px solid #000000;
+  font-weight: 700;
+}
+
+.high-contrast .badge-primary {
+  background-color: #000080;
+  color: #FFFFFF;
+}
+
+.high-contrast .badge-success {
+  background-color: #006400;
+  color: #FFFFFF;
+}
+
+.high-contrast .badge-warning {
+  background-color: #CC6600;
+  color: #FFFFFF;
+}
+
+.high-contrast .badge-info {
+  background-color: #000080;
+  color: #FFFFFF;
+}
+
+/* Alertas */
+.high-contrast .alert {
+  border: 3px solid #000000;
+}
+
+.high-contrast .alert-error {
+  background-color: #FFE6E6;
+  color: #CC0000;
+  border-color: #CC0000;
+}
+
+.high-contrast .alert-success {
+  background-color: #E6FFE6;
+  color: #006400;
+  border-color: #006400;
+}
+
+.high-contrast .alert-warning {
+  background-color: #FFF4E6;
+  color: #CC6600;
+  border-color: #CC6600;
+}
+
+/* Tabelas */
+.high-contrast table {
+  border: 3px solid #000000;
+}
+
+.high-contrast th,
+.high-contrast td {
+  border: 2px solid #000000;
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+.high-contrast th {
+  background-color: #000000;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+/* Remover sombras e gradientes */
+.high-contrast * {
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+/* Footer */
+.high-contrast .site-footer {
+  background-color: #000000;
+  color: #FFFFFF;
+  border-top: 3px solid #FFFF00;
+}
+
+/* Focus visível em todos os elementos interativos */
+.high-contrast a:focus,
+.high-contrast button:focus,
+.high-contrast input:focus,
+.high-contrast select:focus,
+.high-contrast textarea:focus,
+.high-contrast [tabindex]:focus {
+  outline: 3px solid #FFFF00;
+  outline-offset: 2px;
+}
+
+/* Imagens com bordas */
+.high-contrast img {
+  border: 2px solid #000000;
+}
+
+/* Controle de toggle de alto contraste */
+.contrast-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  padding: 12px 20px;
+  background-color: #000000;
+  color: #FFFFFF;
+  border: 3px solid #FFFFFF;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.contrast-toggle:hover,
+.contrast-toggle:focus {
+  background-color: #FFFFFF;
+  color: #000000;
+  border-color: #000000;
+  outline: 3px solid #FFFF00;
+  outline-offset: 2px;
+}
+
+.contrast-toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contrast-toggle-icon {
+  font-size: 1.2rem;
+}
+
+/* Botões de acessibilidade em modo alto contraste */
+.high-contrast .theme-toggle,
+.high-contrast .contrast-toggle {
+  filter: grayscale(0%) opacity(1);
+  background: #FFFF00;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  padding: 4px;
+  width: auto;
+  height: auto;
+}
+
+.high-contrast .theme-toggle:hover,
+.high-contrast .contrast-toggle:hover {
+  background: #FFFFFF;
+  border-color: #000000;
+}
+
+.high-contrast .theme-toggle:focus,
+.high-contrast .contrast-toggle:focus {
+  outline: 3px solid #000000;
+  outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  .contrast-toggle {
+    top: 10px;
+    right: 10px;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+}
