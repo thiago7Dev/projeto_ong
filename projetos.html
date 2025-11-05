@@ -6,69 +6,136 @@
     <title>VôLuntar | Projetos</title>
     <meta name="description" content="Conheça os projetos sociais da VôLuntar e veja como estamos transformando vidas.">
     <meta name="keywords" content="ONG, projetos sociais, educação, saúde, inclusão, sustentabilidade, VôLuntar">
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-    <header id="header-principal">
-        <nav id="nav-principal" aria-label="Navegação principal">
-            <h1>VôLuntar</h1>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="cadastro.html">Faça parte</a></li>
-            </ul>
-        </nav>
-    </header>
+    
+    <!-- Hero Parallax com Header -->
+    <div class="parallax-hero" style="background-image: url('assets/images/voluntar-apresentacao.jpg');">
+        <div class="header-container">
+            <header id="header-principal" class="header-overlay">
+                <nav id="nav-principal" class="navbar-centered" aria-label="Navegação principal">
+                    <div class="brand-wrapper">
+                        <a href="index.html" class="navbar-brand-hero">VôLuntar</a>
+                        <p class="navbar-slogan">Transformando vidas através do voluntariado</p>
+                    </div>
+                    <button class="navbar-toggle navbar-toggle-hero" aria-label="Abrir menu" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="navbar-menu-hero">
+                        <li class="nav-item"><a href="index.html" class="nav-link-hero">Início</a></li>
+                        <li class="nav-item"><a href="projetos.html" class="nav-link-hero active">Projetos</a></li>
+                        <li class="nav-item"><a href="cadastro.html" class="nav-link-hero">Faça parte</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
     <main id="main-content" role="main">
-        <section id="introducao-projetos">
-            <h2>Nossos Projetos</h2>
-            <p>Conheça os projetos que desenvolvemos para transformar vidas e fortalecer comunidades.</p>
+        <!-- Seção de Introdução -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Nossos Projetos</h2>
+                    <p class="text-lg">Conheça os projetos que desenvolvemos para transformar vidas e fortalecer comunidades.</p>
+                </div>
+            </div>
         </section>
-        <section id="lista-projetos-detalhada">
-            <article id="projeto-educacao">
-                <h3>Educar para o Futuro</h3>
-                <img src="assets/images/projeto-educacao.jpg" alt="Crianças participando do projeto Educar para o Futuro" style="max-width: 800px; width: 100%; height: auto;">
-                <p>Oferecemos reforço escolar, mentorias e apoio à permanência na escola para crianças e jovens em situação de vulnerabilidade.</p>
-            </article>
-            <article id="projeto-saude">
-                <h3>Saúde e Bem-Estar</h3>
-                <img src="assets/images/projeto-saude.jpg" alt="Atendimento de saúde no projeto Saúde e Bem-Estar" style="max-width: 800px; width: 100%; height: auto;">
-                <p>Realizamos campanhas de prevenção, atendimentos básicos e orientação sobre saúde mental para a comunidade.</p>
-            </article>
-            <article id="projeto-inclusao">
-                <h3>Inclusão e Trabalho</h3>
-                <img src="assets/images/projeto-inclusao.jpg" alt="Curso profissionalizante do projeto Inclusão e Trabalho" style="max-width: 800px; width: 100%; height: auto;">
-                <p>Promovemos cursos profissionalizantes e encaminhamento para emprego, ajudando pessoas a conquistarem sua independência.</p>
-            </article>
-            <article id="projeto-sustentabilidade">
-                <h3>Comunidade Sustentável</h3>
-                <img src="assets/images/projeto-sustentavel.jpg" alt="Horta comunitária do projeto Comunidade Sustentável" style="max-width: 800px; width: 100%; height: auto;">
-                <p>Desenvolvemos hortas urbanas, reciclagem e projetos de preservação ambiental em parceria com a comunidade.</p>
-            </article>
+
+        <!-- Grid de Projetos -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="grid-2 mb-6">
+                <article id="projeto-educacao" class="card card-project">
+                    <img src="assets/images/projeto-educacao.jpg" alt="Crianças participando do projeto Educar para o Futuro" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Educar para o Futuro</h3>
+                        <p class="card-text">Oferecemos reforço escolar, mentorias e apoio à permanência na escola para crianças e jovens em situação de vulnerabilidade.</p>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <span class="badge badge-primary">Educação</span>
+                            <span class="badge badge-outline badge-success">Ativo</span>
+                        </div>
+                    </div>
+                </article>
+                <article id="projeto-saude" class="card card-project">
+                    <img src="assets/images/projeto-saude.jpg" alt="Atendimento de saúde no projeto Saúde e Bem-Estar" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Saúde e Bem-Estar</h3>
+                        <p class="card-text">Realizamos campanhas de prevenção, atendimentos básicos e orientação sobre saúde mental para a comunidade.</p>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <span class="badge badge-success">Saúde</span>
+                            <span class="badge badge-outline badge-success">Ativo</span>
+                        </div>
+                    </div>
+                </article>
+                <article id="projeto-inclusao" class="card card-project">
+                    <img src="assets/images/projeto-inclusao.jpg" alt="Curso profissionalizante do projeto Inclusão e Trabalho" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Inclusão e Trabalho</h3>
+                        <p class="card-text">Promovemos cursos profissionalizantes e encaminhamento para emprego, ajudando pessoas a conquistarem sua independência.</p>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <span class="badge badge-warning">Inclusão</span>
+                            <span class="badge badge-outline badge-success">Ativo</span>
+                        </div>
+                    </div>
+                </article>
+                <article id="projeto-sustentabilidade" class="card card-project">
+                    <img src="assets/images/projeto-sustentavel.jpg" alt="Horta comunitária do projeto Comunidade Sustentável" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Comunidade Sustentável</h3>
+                        <p class="card-text">Desenvolvemos hortas urbanas, reciclagem e projetos de preservação ambiental em parceria com a comunidade.</p>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <span class="badge badge-info">Sustentabilidade</span>
+                            <span class="badge badge-outline badge-success">Ativo</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </section>
-        <section id="call-to-action">
-            <h2>Faça Parte</h2>
-            <p>Quer contribuir com nossos projetos? Seja um voluntário ou apoiador.</p>
-            <a href="cadastro.html">Quero ser voluntário</a>
+
+        <!-- Call to Action -->
+        <section class="section text-center" style="background-color: var(--color-ice-white); padding: var(--space-6);">
+            <div class="container">
+                <h2>Faça Parte</h2>
+                <p class="text-lg mb-4">Quer contribuir com nossos projetos? Seja um voluntário ou apoiador.</p>
+                <a href="cadastro.html" class="btn btn-primary btn-lg">Quero ser voluntário</a>
+            </div>
         </section>
     </main>
-    <footer id="footer-principal" role="contentinfo">
-        <p>&copy; 2025 - VôLuntar. Todos os direitos reservados.</p>
-        <address id="endereco-contato">
-            VôLuntar ONG<br>
-            Rua da Solidariedade, 123, Bairro Esperança, Cidade, Estado, CEP 00000-000<br>
-            Telefone: (00) 1234-5678<br>
-            <a href="mailto:contato@voluntar.org">contato@voluntar.org</a>
-        </address>
-        <nav id="nav-footer" aria-label="Redes sociais e links institucionais">
-            <ul id="redes-sociais">
-                <li><a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visite nossa página no Facebook (abre em nova aba)">Facebook</a></li>
-                <li><a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visite nosso perfil no Instagram (abre em nova aba)">Instagram</a></li>
-                <li><a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visite nosso perfil no Twitter (abre em nova aba)">Twitter</a></li>
-                <li><a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visite nossa página no LinkedIn (abre em nova aba)">LinkedIn</a></li>
-                <li><a href="#" target="_blank" rel="noopener noreferrer" aria-label="Leia nossa Política de Privacidade (abre em nova aba)">Política de Privacidade</a></li>
-                <li><a href="#" target="_blank" rel="noopener noreferrer" aria-label="Leia nossos Termos de Uso (abre em nova aba)">Termos de Uso</a></li>
-            </ul>
-        </nav>
+    <footer id="footer-principal" class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="text-center mb-4">
+                <p>&copy; 2025 - VôLuntar. Todos os direitos reservados.</p>
+            </div>
+            <div class="grid-2 gap-4 mb-4">
+                <address id="endereco-contato" style="font-style: normal;">
+                    <strong>VôLuntar ONG</strong><br>
+                    Rua da Solidariedade, 123, Bairro Esperança<br>
+                    Cidade, Estado, CEP 00000-000<br>
+                    Telefone: (00) 1234-5678<br>
+                    <a href="mailto:contato@voluntar.org" style="color: var(--color-lime);">contato@voluntar.org</a>
+                </address>
+                <nav id="nav-footer" aria-label="Redes sociais e links institucionais">
+                    <p class="font-bold mb-2">Redes Sociais</p>
+                    <ul id="redes-sociais" class="d-flex flex-wrap gap-2">
+                        <li><a href="#" target="_blank" rel="noopener noreferrer" class="tag tag-primary" aria-label="Visite nossa página no Facebook (abre em nova aba)">Facebook</a></li>
+                        <li><a href="#" target="_blank" rel="noopener noreferrer" class="tag tag-primary" aria-label="Visite nosso perfil no Instagram (abre em nova aba)">Instagram</a></li>
+                        <li><a href="#" target="_blank" rel="noopener noreferrer" class="tag tag-primary" aria-label="Visite nosso perfil no Twitter (abre em nova aba)">Twitter</a></li>
+                        <li><a href="#" target="_blank" rel="noopener noreferrer" class="tag tag-primary" aria-label="Visite nossa página no LinkedIn (abre em nova aba)">LinkedIn</a></li>
+                    </ul>
+                    <p class="font-bold mb-2 mt-3">Links Institucionais</p>
+                    <ul class="d-flex flex-wrap gap-2">
+                        <li><a href="#" target="_blank" rel="noopener noreferrer" class="tag tag-success" aria-label="Leia nossa Política de Privacidade (abre em nova aba)">Política de Privacidade</a></li>
+                        <li><a href="#" target="_blank" rel="noopener noreferrer" class="tag tag-success" aria-label="Leia nossos Termos de Uso (abre em nova aba)">Termos de Uso</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </footer>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
